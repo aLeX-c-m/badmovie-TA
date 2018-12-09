@@ -20,16 +20,20 @@ class App extends React.Component {
     this.deleteMovies = this.deleteMovies.bind(this)
   }
 
-  getMovies() {
+  getMovies(endpt) {
+    axios.get(`/${endpt}`)
+    .then()
     // make an axios request to your server on the GET SEARCH endpoint
   }
 
-  saveMovie() {
-    // same as above but do something diff
+  saveMovie(movie) {
+    axios.post('/favorites')
+    .then()
   }
 
   deleteMovie() {
     // same as above but do something diff
+    axios.get()
   }
 
   swapFavorites() {

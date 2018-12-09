@@ -4,7 +4,8 @@ const apiHelpers = require('../helpers/apiHelpers.js');
 //Return requests to the client
 module.exports = {
   getSearch: (req, res) => {
-    // get the search genre     
+    // get the search genre  
+    req.body.genre   
 
     // https://www.themoviedb.org/account/signup
     // get your API KEY
