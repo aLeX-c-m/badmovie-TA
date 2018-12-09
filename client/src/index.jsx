@@ -11,10 +11,13 @@ class App extends React.Component {
   	this.state = {
       movies: [{deway: "movies"}],
       favorites: [{deway: "favorites"}],
-      showFaves: false,
+      showFaves: false
     };
     
     // you might have to do something important here!
+    this.getMovies = this.getMovies.bind(this)
+    this.saveMovie = this.saveMovie.bind(this) //bind or pass down problem
+    this.deleteMovies = this.deleteMovies.bind(this)
   }
 
   getMovies() {
@@ -35,7 +38,7 @@ class App extends React.Component {
       showFaves: !this.state.showFaves
     });
   }
-
+//pass down deleteMovie and saveMovie?
   render () {
   	return (
       <div className="app">
@@ -43,7 +46,7 @@ class App extends React.Component {
         
         <div className="main">
           <Search swapFavorites={this.swapFavorites} showFaves={this.state.showFaves}/>
-          <Movies movies={this.state.showFaves ? this.state.favorites : this.state.movies} showFaves={this.state.showFaves}/>
+          <Movies deleteMovie={this.deleteMovie} saveMovie = {this.saveMovie} movies={this.state.showFaves ? this.state.favorites : this.state.movies} showFaves={this.state.showFaves}/>
         </div>
       </div>
     );
